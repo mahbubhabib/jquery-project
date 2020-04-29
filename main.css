@@ -1,0 +1,965 @@
+#us-map{
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+path:hover, circle:hover {
+  stroke: #323a49 !important;
+  stroke-width: 10;
+  stroke-linejoin: squre;
+  fill: #323a49 !important;
+  cursor: pointer;
+
+}
+
+
+#info-box {
+  display: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: #ffffff;
+  border: 2px solid #1d84bf;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: arial;
+}
+
+.see{display: block;}
+
+.details {
+  position: absolute;
+  bottom: 25px;
+  left: 16px;
+}
+
+.Agent {
+  position: absolute;
+  left:15%;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.name{
+  color: #ffffff;
+  font-size: 18px;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-bottom: 0px;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.gradient {
+  margin: 10px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size: 15px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFF;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 25px;
+  background-color:#A9A9A9;
+}
+
+.hover { background-color:#323a49; }
+.active { background-color:#323a49; }
+
+
+.float-map {
+  position: relative;
+}
+.side-float-content-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.side-float-content-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.side-float-card {
+  max-width: 200px;
+  margin: 0;
+  display: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /*max-width: 300px;*/
+  /*margin: auto;*/
+  position: relative;
+}
+.side-float-card img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.side-float-card.show {
+  display: block;
+}
+
+.see{display: block;}
+
+.fill-stroke {
+  stroke: #323a49 !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #323a49 !important;
+  cursor: pointer;
+}
+
+
+
+.small{
+  font-size: 10px;
+}
+
+.noHover{
+  pointer-events: none;
+}
+
+/*VT*/
+rect:hover {
+  stroke: #323a49 !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #323a49 !important;
+  cursor: pointer;
+
+}
+
+.hover-color:hover {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #b9b9b9 !important;
+  cursor: pointer;
+}
+
+
+.fill-stroke-change {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #b9b9b9 !important;
+  cursor: pointer;
+}
+
+
+/*MT , ID , WY, ND, SD, NE*/
+.mt-click-color {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+.id-click-color {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+.wy-click-color {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+.nd-click-color {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+.sd-click-color {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+.ne-click-color {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+/*UT, CO*/
+.ut-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #694460 !important;
+  cursor: pointer;
+}
+
+.co-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #694460 !important;
+  cursor: pointer;
+}
+
+/*KS, OK*/
+.ks-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #82E0AA !important;
+  cursor: pointer;
+}
+
+.ok-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #82E0AA !important;
+  cursor: pointer;
+}
+
+/*MN, WI*/
+.mn-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5e6264 !important;
+  cursor: pointer;
+}
+
+.wi-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5e6264 !important;
+  cursor: pointer;
+}
+
+/*IA, MO*/
+.ia-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #A569BD !important;
+  cursor: pointer;
+}
+
+.mo-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #A569BD !important;
+  cursor: pointer;
+}
+
+/*AR, LA*/
+.ar-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #ff6569 !important;
+  cursor: pointer;
+}
+
+.la-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #ff6569 !important;
+  cursor: pointer;
+}
+
+/*WV , KY, NY*/
+.wv-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #f3c54c !important;
+  cursor: pointer;
+}
+
+.ky-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #f3c54c !important;
+  cursor: pointer;
+}
+
+.ny-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #f3c54c !important;
+  cursor: pointer;
+}
+
+/*IL*/
+.il-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #85C1E9 !important;
+  cursor: pointer;
+}
+
+/*IN, TN, MS, NJ*/
+.in-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.tn-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.ms-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.nj-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+
+/*AL, FL, MI, MA*/
+.al-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #91bca8 !important;
+  cursor: pointer;
+}
+
+.fl-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #91bca8 !important;
+  cursor: pointer;
+}
+
+.fl-p1-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #dd5466 !important;
+  cursor: pointer;
+}
+
+.fl-p2-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #ffe928 !important;
+  cursor: pointer;
+}
+
+.mi-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #91bca8 !important;
+  cursor: pointer;
+}
+
+.ma-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #bfa898 !important;
+  cursor: pointer;
+}
+
+/*GA*/
+.ga-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #D35400 !important;
+  cursor: pointer;
+}
+
+/*VA, MD, DE*/
+.va-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+.md-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+.de-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+/*PA*/
+.pa-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #27AE60 !important;
+  cursor: pointer;
+}
+
+/*VT,NH,ME,OH, NC, SC*/
+.vt-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+.nh-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+.me-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+.oh-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+.nc-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #F1948A !important;
+  cursor: pointer;
+}
+
+.sc-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #F1948A !important;
+  cursor: pointer;
+}
+
+/*RI*/
+.ri-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #bfa898 !important;
+  cursor: pointer;
+}
+
+/*CT*/
+.ct-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #AAB7B8  !important;
+  cursor: pointer;
+}
+
+/*DC*/
+.dc-click-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+/*.........*/
+/*WA, OR, ID, MT, WY, ND, SD, NE,*/
+.wa-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.or-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.id-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.mt-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.wy-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.nd-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.sd-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+.ne-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #9b4447 !important;
+  cursor: pointer;
+}
+
+/*NV*/
+.nv-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #bfa898 !important;
+  cursor: pointer;
+}
+
+/*CA*/
+.ca-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #bfa898 !important;
+  cursor: pointer;
+}
+.ca-p1-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #884EA0 !important;
+  cursor: pointer;
+}
+
+/*UT, AZ CO, NM*/
+.ut-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+.az-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+.co-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+.nm-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4f85c7 !important;
+  cursor: pointer;
+}
+
+/*WV*/
+.wv-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+/*TX*/
+.tx-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #e25b4b !important;
+  cursor: pointer;
+}
+
+/*KS, OK, IA, MO, AR, LA*/
+.ks-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #815166 !important;
+  cursor: pointer;
+}
+
+
+.ok-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #815166 !important;
+  cursor: pointer;
+}
+
+.ia-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #815166 !important;
+  cursor: pointer;
+}
+
+.mo-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #815166 !important;
+  cursor: pointer;
+}
+
+.ar-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #815166 !important;
+  cursor: pointer;
+}
+
+.la-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #815166 !important;
+  cursor: pointer;
+}
+
+
+/*MN, WI, AL*/
+.mn-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #F1948A !important;
+  cursor: pointer;
+}
+
+.wi-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #F1948A !important;
+  cursor: pointer;
+}
+
+.il-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #F1948A !important;
+  cursor: pointer;
+}
+
+.al-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+/*MI, IN, OH*/
+.mi-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #ff6569 !important;
+  cursor: pointer;
+}
+
+.in-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #ff6569 !important;
+  cursor: pointer;
+}
+
+.oh-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #ff6569 !important;
+  cursor: pointer;
+}
+
+/*GA*/
+.ga-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+/*FL*/
+.fl-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4a7082 !important;
+  cursor: pointer;
+}
+
+.fl-p1-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4c509b !important;
+  cursor: pointer;
+}
+
+
+.fl-p2-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4c509b !important;
+  cursor: pointer;
+}
+
+/*MS, TN, NC, SC, KY, */
+.ms-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+.tn-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+.nc-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+.sc-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+.ky-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+/*VA, MD, DE*/
+.va-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #4ad0c2 !important;
+  cursor: pointer;
+}
+
+.md-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #BA4A00 !important;
+  cursor: pointer;
+}
+
+.de-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #BA4A00 !important;
+  cursor: pointer;
+}
+
+/*NY, PA, NJ*/
+.ny-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #EB984E !important;
+  cursor: pointer;
+}
+
+.pa-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #EB984E !important;
+  cursor: pointer;
+}
+
+.nj-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #EB984E !important;
+  cursor: pointer;
+}
+
+/*ME, NH, VT, MA, RI, CT*/
+.me-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5c6f6f !important;
+  cursor: pointer;
+}
+
+.nh-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5c6f6f !important;
+  cursor: pointer;
+}
+
+.vt-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5c6f6f !important;
+  cursor: pointer;
+}
+
+.ma-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5c6f6f !important;
+  cursor: pointer;
+}
+
+.ri-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5c6f6f !important;
+  cursor: pointer;
+}
+
+.ct-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #5c6f6f !important;
+  cursor: pointer;
+}
+
+/*DC*/
+.dc-buy-color  {
+  stroke: #ffffff !important;
+  stroke-width: 2px;
+  stroke-linejoin: round;
+  fill: #27AE60 !important;
+  cursor: pointer;
+}
